@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'newticket.dart';
 void main() => runApp(MaterialApp(home: ChoiceView()));
 
 class ChoiceView extends StatelessWidget {
@@ -9,7 +9,7 @@ class ChoiceView extends StatelessWidget {
         appBar: PreferredSize(
             preferredSize: Size.fromHeight(50.0),
             child: AppBar(
-              //title: Image.asset('assets/image/logo.png', fit: BoxFit.fill),
+              title: Image.asset('assets/image/logo.png', fit: BoxFit.fill),
 
               backgroundColor: Colors.red,// ...
             )
@@ -67,7 +67,7 @@ class ChoiceView extends StatelessWidget {
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ChoiceView()),
+                                MaterialPageRoute(builder: (context) => createticket()),
                               );
                             },
                             child: Text(
