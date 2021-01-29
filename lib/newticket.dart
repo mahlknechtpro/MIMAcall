@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mimacall/main.dart';
-import 'package:mimacall/saveticket.dart';
+
+
+String dropdownValue = 'None';
 
 class CreateTicket extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,27 +31,53 @@ class CreateTicket extends StatelessWidget {
 
                 new TextFormField(
                   decoration: InputDecoration(
-                    labelText: 'Nome cliente'
+                    labelText: 'Codice cliente'
                   ),
-                ), //TextFormField Nome cliente
+                ), //TextFormField Codice cliente
 
                 new TextFormField(
                   decoration: InputDecoration(
-                      labelText: 'Numero cliente'
+                      labelText: 'Ragione fiscale'
                   ),
-                ), //TextFormField Numero cliente
+                ), //TextFormField Ragione fiscale
 
                 new TextFormField(
                   decoration: InputDecoration(
-                      labelText: 'Matricola'
+                      labelText: 'Nome contatto'
                   ),
-                ), //TextFormField Matricola
+                ), //TextFormField Nome contatto
 
                 new TextFormField(
                   decoration: InputDecoration(
                       labelText: 'Telefono'
                   ),
                 ), //TextFormField Telefono
+
+                new DropdownButton<String>(
+                  hint: Text('None'),
+                  items: <String>['RistoQuick', 'Caddy', 'CassaInCloud', 'RQ Light'].map((String value) {
+                    return new DropdownMenuItem<String>(
+                      value: value,
+                      child: new Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (dropdownValueSelected) {
+                    debugPrint(dropdownValueSelected);
+                  },
+                ),
+
+                new TextFormField(
+                  decoration: InputDecoration(
+                      labelText: 'Modello RT'
+                  ),
+                ),
+
+                new TextFormField(
+                  decoration: InputDecoration(
+                      labelText: 'Matricola',
+                  ),
+                  //controller: ,
+                ),
 
                 new TextField(
                   decoration: InputDecoration(
@@ -67,6 +96,7 @@ class CreateTicket extends StatelessWidget {
                   padding: EdgeInsets.all(8.0),
                   splashColor: Colors.blueAccent,
                   onPressed: () {
+                    //saveData("ClientNumber: "+ "/n");
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ChoiceView()),
@@ -105,6 +135,16 @@ class CreateTicket extends StatelessWidget {
       ),
     );
 
-
   }
 }
+
+/*void saveData(String dataToSave) async {
+  /*_write(String text) async {
+    final Directory directory = await getApplicationDocumentsDirectory();
+    final File file = File('${directory.path}/my_file.txt');
+    await file.writeAsString(text);
+  }*/
+
+  print('Open Database');
+
+}*/

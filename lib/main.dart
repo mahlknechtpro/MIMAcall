@@ -112,12 +112,7 @@ class ChoiceView extends StatelessWidget {
                             disabledTextColor: Colors.black,
                             padding: EdgeInsets.all(8.0),
                             splashColor: Colors.blueAccent,
-                            onPressed: SendEmail,/*() {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => ChoiceView()),
-                              );
-                            },*/
+                            onPressed: SendEmail,
                             child: Text(
                               "Send Tickets",
                               style: TextStyle(fontSize: 20.0),
